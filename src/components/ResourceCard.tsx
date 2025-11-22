@@ -10,51 +10,51 @@ interface ResourceCardProps {
 
 export function ResourceCard({ name, description, url, image }: ResourceCardProps) {
   return (
-    <div className="group relative bg-card rounded-2xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300 animate-fade-in hover:shadow-hover">
-      {/* Gradient Background Effect */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+    <div className="group relative bg-card rounded-3xl overflow-hidden border-2 border-border hover:border-primary transition-all duration-500 animate-fade-in shadow-2xl hover:shadow-[0_20px_60px_-15px_rgba(168,85,247,0.4)] hover:scale-[1.03]">
+      {/* Enhanced Gradient Background Effect */}
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-accent/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       
-      {/* Image */}
-      <div className="relative h-48 overflow-hidden">
+      {/* Image with Enhanced Height */}
+      <div className="relative h-56 overflow-hidden">
         <img
           src={image}
           alt={name}
-          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-card to-transparent opacity-60" />
+        <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent opacity-80" />
       </div>
 
-      {/* Content */}
-      <div className="relative p-6 space-y-4">
-        <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
+      {/* Content with Enhanced Spacing */}
+      <div className="relative p-8 space-y-5">
+        <h3 className="text-2xl font-bold text-foreground group-hover:text-primary transition-colors duration-300">
           {name}
         </h3>
         
-        <p className="text-sm text-muted-foreground leading-relaxed line-clamp-3">
+        <p className="text-base text-muted-foreground leading-relaxed line-clamp-3 min-h-[4.5rem]">
           {description}
         </p>
 
         <Button
           asChild
           variant="default"
-          size="sm"
-          className="w-full rounded-full shadow-lg shadow-primary/20 hover:shadow-primary/40 transition-all duration-300 group-hover:translate-y-[-2px]"
+          size="lg"
+          className="w-full rounded-full shadow-xl shadow-primary/30 hover:shadow-primary/50 transition-all duration-300 group-hover:translate-y-[-4px] text-base font-semibold"
         >
           <a
             href={url}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center justify-center gap-2"
+            className="flex items-center justify-center gap-3"
           >
             <span>زيارة الموقع</span>
-            <ExternalLink className="h-4 w-4" />
+            <ExternalLink className="h-5 w-5" />
           </a>
         </Button>
       </div>
 
-      {/* Glow Effect */}
-      <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-        <div className="absolute -inset-[1px] bg-gradient-to-r from-accent via-primary to-accent-glow rounded-2xl blur-sm opacity-30" />
+      {/* Enhanced Glow Effect */}
+      <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+        <div className="absolute -inset-[2px] bg-gradient-to-r from-accent via-primary to-accent-glow rounded-3xl blur-md opacity-40" />
       </div>
     </div>
   );
