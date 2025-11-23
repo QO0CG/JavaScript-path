@@ -39,7 +39,7 @@ const Courses = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen">
       <Navbar />
       
       <div className="container mx-auto px-4 py-12 space-y-16">
@@ -60,7 +60,7 @@ const Courses = () => {
             {youtubeCourses.map((course, index) => (
               <div
                 key={course.name}
-                style={{ animationDelay: `${index * 0.1}s` }}
+                style={{ animationDelay: `${index * 0.15}s` }}
               >
                 <ResourceCard {...course} />
               </div>
@@ -85,8 +85,8 @@ const Courses = () => {
             {books.map((book, index) => (
               <div
                 key={book.name}
-                className="group relative bg-card rounded-2xl overflow-hidden border border-border hover:border-primary/50 transition-all duration-300 hover:shadow-hover animate-fade-in"
-                style={{ animationDelay: `${(index + 2) * 0.1}s` }}
+                className="group relative bg-card rounded-2xl overflow-hidden border border-border/50 hover:border-primary/30 transition-all duration-300 floating-card animate-fade-in"
+                style={{ animationDelay: `${(index + 2) * 0.15}s` }}
               >
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 
@@ -115,7 +115,7 @@ const Courses = () => {
                 </div>
 
                 <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                  <div className="absolute -inset-[1px] bg-gradient-to-r from-accent via-primary to-accent-glow rounded-2xl blur-sm opacity-30" />
+                  <div className="absolute -inset-[1px] bg-gradient-to-r from-accent/20 via-primary/20 to-accent-glow/20 rounded-2xl blur-lg" />
                 </div>
               </div>
             ))}

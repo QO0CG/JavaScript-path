@@ -18,22 +18,23 @@ export function Navbar() {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <nav className="sticky top-0 z-50 bg-background/80 backdrop-blur-lg border-b border-border">
+    <nav className="sticky top-0 z-50 backdrop-blur-lg">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
-          {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 group">
-            <div className="relative">
-              <Code2 className="h-8 w-8 text-primary transition-transform group-hover:scale-110" />
-              <div className="absolute inset-0 bg-primary/20 blur-xl rounded-full animate-glow" />
+          {/* Logo - Floating Badge Style */}
+          <Link to="/" className="group">
+            <div className="flex items-center gap-3 px-4 py-2 bg-card rounded-full border-2 border-border floating-element transition-all hover:border-primary/50">
+              <div className="relative">
+                <Code2 className="h-6 w-6 text-primary transition-transform group-hover:scale-110" />
+              </div>
+              <span className="text-base font-bold bg-gradient-to-r from-primary via-accent to-accent-glow bg-clip-text text-transparent">
+                تعلم JavaScript
+              </span>
             </div>
-            <span className="text-xl font-bold bg-gradient-to-r from-primary via-accent to-accent-glow bg-clip-text text-transparent">
-              تعلم JavaScript
-            </span>
           </Link>
 
           {/* Desktop Links */}
-          <div className="hidden md:flex items-center gap-6">
+          <div className="hidden md:flex items-center gap-4">
             {links.map((link) => (
               <Link
                 key={link.to}
@@ -53,21 +54,20 @@ export function Navbar() {
             <ThemeToggle />
           </div>
 
-          {/* Mobile Menu Button */}
-          <div className="flex md:hidden items-center gap-2">
+          {/* Mobile Menu Button - Floating Style */}
+          <div className="flex md:hidden items-center gap-3">
             <ThemeToggle />
-            <Button
-              variant="ghost"
-              size="icon"
-              className="rounded-full"
+            <button
+              className="w-12 h-12 rounded-full bg-card border-2 border-border floating-element flex items-center justify-center transition-all hover:border-primary/50"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              aria-label="Toggle menu"
             >
               {mobileMenuOpen ? (
-                <X className="h-6 w-6" />
+                <X className="h-6 w-6 text-foreground" />
               ) : (
-                <Menu className="h-6 w-6" />
+                <Menu className="h-6 w-6 text-foreground" />
               )}
-            </Button>
+            </button>
           </div>
         </div>
 
