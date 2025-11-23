@@ -10,9 +10,9 @@ interface ResourceCardProps {
 
 export function ResourceCard({ name, description, url, image }: ResourceCardProps) {
   return (
-    <div className="group relative bg-card rounded-3xl overflow-hidden border-2 border-border hover:border-primary transition-all duration-500 animate-fade-in shadow-2xl hover:shadow-[0_20px_60px_-15px_rgba(168,85,247,0.4)] hover:scale-[1.03]">
+    <div className="group relative bg-card rounded-3xl overflow-hidden border border-border/50 hover:border-primary/30 transition-all duration-500 scroll-reveal floating-card">
       {/* Enhanced Gradient Background Effect */}
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-accent/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       
       {/* Image with Enhanced Height */}
       <div className="relative h-56 overflow-hidden">
@@ -38,7 +38,10 @@ export function ResourceCard({ name, description, url, image }: ResourceCardProp
           asChild
           variant="default"
           size="lg"
-          className="w-full rounded-full shadow-xl shadow-primary/30 hover:shadow-primary/50 transition-all duration-300 group-hover:translate-y-[-4px] text-base font-semibold"
+          className="w-full rounded-full transition-all duration-300 group-hover:translate-y-[-2px] text-base font-semibold"
+          style={{
+            boxShadow: 'var(--button-shadow-light)'
+          }}
         >
           <a
             href={url}
@@ -54,7 +57,7 @@ export function ResourceCard({ name, description, url, image }: ResourceCardProp
 
       {/* Enhanced Glow Effect */}
       <div className="absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
-        <div className="absolute -inset-[2px] bg-gradient-to-r from-accent via-primary to-accent-glow rounded-3xl blur-md opacity-40" />
+        <div className="absolute -inset-[1px] bg-gradient-to-r from-accent/20 via-primary/20 to-accent-glow/20 rounded-3xl blur-lg" />
       </div>
     </div>
   );

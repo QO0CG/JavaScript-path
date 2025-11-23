@@ -5,15 +5,13 @@ import { Link } from "react-router-dom";
 
 const Index = () => {
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen">
       <Navbar />
       
       {/* Hero Section */}
       <section className="relative py-20 overflow-hidden">
-        {/* Background Gradient */}
-        <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-accent/5 to-background" />
-        <div className="absolute top-20 left-10 w-72 h-72 bg-primary/20 rounded-full blur-3xl animate-glow" />
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/20 rounded-full blur-3xl animate-glow" />
+        <div className="absolute top-20 left-10 w-72 h-72 bg-primary/10 rounded-full blur-3xl animate-glow" />
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-accent/10 rounded-full blur-3xl animate-glow" />
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center space-y-8 animate-fade-in">
@@ -58,12 +56,12 @@ const Index = () => {
       </section>
 
       {/* Features Section */}
-      <section className="py-20 bg-muted/30">
+      <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8">
             <Link
               to="/international"
-              className="group p-8 bg-card rounded-2xl border border-border hover:border-primary/50 transition-all hover:shadow-hover animate-fade-in"
+              className="group p-8 bg-card rounded-2xl border border-border/50 hover:border-primary/30 transition-all floating-card animate-fade-in"
             >
               <div className="space-y-4">
                 <div className="w-14 h-14 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
@@ -80,7 +78,7 @@ const Index = () => {
 
             <Link
               to="/arabic"
-              className="group p-8 bg-card rounded-2xl border border-border hover:border-primary/50 transition-all hover:shadow-hover animate-fade-in"
+              className="group p-8 bg-card rounded-2xl border border-border/50 hover:border-primary/30 transition-all floating-card animate-fade-in"
               style={{ animationDelay: "0.1s" }}
             >
               <div className="space-y-4">
@@ -98,7 +96,7 @@ const Index = () => {
 
             <Link
               to="/courses"
-              className="group p-8 bg-card rounded-2xl border border-border hover:border-primary/50 transition-all hover:shadow-hover animate-fade-in"
+              className="group p-8 bg-card rounded-2xl border border-border/50 hover:border-primary/30 transition-all floating-card animate-fade-in"
               style={{ animationDelay: "0.2s" }}
             >
               <div className="space-y-4">

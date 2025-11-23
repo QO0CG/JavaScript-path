@@ -20,7 +20,7 @@ const Arabic = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen">
       <Navbar />
       
       <div className="container mx-auto px-4 py-12">
@@ -41,7 +41,7 @@ const Arabic = () => {
           {resources.map((resource, index) => (
             <div
               key={resource.name}
-              style={{ animationDelay: `${index * 0.1}s` }}
+              style={{ animationDelay: `${index * 0.15}s` }}
             >
               <ResourceCard {...resource} />
             </div>
