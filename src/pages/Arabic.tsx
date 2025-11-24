@@ -23,7 +23,7 @@ const Arabic = () => {
     <div className="min-h-screen">
       <Navbar />
       
-      <div className="container mx-auto px-4 py-12">
+      <div className="container mx-auto px-4 py-12 max-w-7xl">
         {/* Header */}
         <div className="max-w-3xl mx-auto text-center mb-16 animate-fade-in">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
@@ -37,11 +37,12 @@ const Arabic = () => {
         </div>
 
         {/* Resources Grid */}
-        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-5xl mx-auto">
           {resources.map((resource, index) => (
             <div
               key={resource.name}
-              style={{ animationDelay: `${index * 0.15}s` }}
+              className="floating-card scroll-reveal"
+              style={{ animationDelay: `${index * 0.1}s` }}
             >
               <ResourceCard {...resource} />
             </div>
