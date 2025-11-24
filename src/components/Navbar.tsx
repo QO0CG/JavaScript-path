@@ -23,11 +23,11 @@ export function Navbar() {
         <div className="flex items-center justify-between">
           {/* Logo - Floating Badge Style */}
           <Link to="/" className="group">
-            <div className="flex items-center gap-3 px-4 py-2 bg-card rounded-full border-2 border-border floating-element transition-all hover:border-primary/50">
+            <div className="flex items-center gap-2 px-3 py-1.5 bg-card rounded-full border border-border floating-element transition-all hover:border-primary/50">
               <div className="relative">
-                <Code2 className="h-6 w-6 text-primary transition-transform group-hover:scale-110" />
+                <Code2 className="h-5 w-5 text-primary transition-transform group-hover:scale-110" />
               </div>
-              <span className="text-base font-bold bg-gradient-to-r from-primary via-accent to-accent-glow bg-clip-text text-transparent">
+              <span className="text-sm font-bold bg-gradient-to-r from-primary via-accent to-accent-glow bg-clip-text text-transparent">
                 تعلم JavaScript
               </span>
             </div>

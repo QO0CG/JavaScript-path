@@ -35,19 +35,19 @@ export function ThemeToggle() {
         />
         
         <button
-          className={`relative z-10 flex items-center justify-center w-10 h-10 rounded-full transition-all duration-300 ${
-            theme === "light" ? "text-primary-foreground" : "text-muted-foreground"
+          className={`relative z-10 flex items-center justify-center w-9 h-9 rounded-full transition-all duration-300 ${
+            theme === "light" ? "text-primary-foreground" : "text-foreground/60"
           }`}
         >
-          <Sun className="h-5 w-5" />
+          <Sun className="h-4 w-4" />
         </button>
         
         <button
-          className={`relative z-10 flex items-center justify-center w-10 h-10 rounded-full transition-all duration-300 ${
-            theme === "dark" ? "text-primary-foreground" : "text-muted-foreground"
+          className={`relative z-10 flex items-center justify-center w-9 h-9 rounded-full transition-all duration-300 ${
+            theme === "dark" ? "text-primary-foreground" : "text-foreground/60"
           }`}
         >
-          <Moon className="h-5 w-5" />
+          <Moon className="h-4 w-4" />
         </button>
       </div>
     </div>

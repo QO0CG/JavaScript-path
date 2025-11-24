@@ -57,8 +57,8 @@ const Index = () => {
 
       {/* Features Section */}
       <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-3 gap-8">
+        <div className="container mx-auto px-4 max-w-7xl">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
             <Link
               to="/international"
               className="group p-8 bg-card rounded-2xl border border-border/50 hover:border-primary/30 transition-all floating-card animate-fade-in"
