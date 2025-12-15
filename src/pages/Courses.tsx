@@ -3,6 +3,7 @@ import { ResourceCard } from "@/components/ResourceCard";
 import elzeroImage from "@/assets/elzero.jpg";
 import abdelrahmanImage from "@/assets/abdelrahman-gamal.jpg";
 import { BookOpen } from "lucide-react";
+import PageTransition from "@/components/PageTransition";
 
 const Courses = () => {
   const youtubeCourses = [
@@ -39,91 +40,93 @@ const Courses = () => {
   ];
 
   return (
-    <div className="min-h-screen">
-      <Navbar />
-      
-      <div className="container mx-auto px-4 py-12 max-w-7xl space-y-16">
-        {/* YouTube Courses Section */}
-        <section className="animate-fade-in">
-          <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              <span className="bg-gradient-to-r from-primary via-accent to-accent-glow bg-clip-text text-transparent">
-                كورسات اليوتيوب
-              </span>
-            </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              أفضل كورسات اليوتيوب العربية المجانية لتعلم JavaScript بشكل تفاعلي
-            </p>
-          </div>
+    <PageTransition>
+      <div className="min-h-screen">
+        <Navbar />
+        
+        <div className="container mx-auto px-4 py-12 max-w-7xl space-y-16">
+          {/* YouTube Courses Section */}
+          <section className="animate-fade-in">
+            <div className="max-w-3xl mx-auto text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                <span className="bg-gradient-to-r from-primary via-accent to-accent-glow bg-clip-text text-transparent">
+                  كورسات اليوتيوب
+                </span>
+              </h2>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                أفضل كورسات اليوتيوب العربية المجانية لتعلم JavaScript بشكل تفاعلي
+              </p>
+            </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {youtubeCourses.map((course, index) => (
-              <div
-                key={course.name}
-                className="floating-card scroll-reveal"
-                style={{ animationDelay: `${index * 0.1}s` }}
-              >
-                <ResourceCard {...course} />
-              </div>
-            ))}
-          </div>
-        </section>
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {youtubeCourses.map((course, index) => (
+                <div
+                  key={course.name}
+                  className="floating-card scroll-reveal"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                >
+                  <ResourceCard {...course} />
+                </div>
+              ))}
+            </div>
+          </section>
 
-        {/* Books Section */}
-        <section className="animate-fade-in" style={{ animationDelay: "0.2s" }}>
-          <div className="max-w-3xl mx-auto text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold mb-4">
-              <span className="bg-gradient-to-r from-primary via-accent to-accent-glow bg-clip-text text-transparent">
-                كتب ومراجع مجانية
-              </span>
-            </h2>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              كتب إلكترونية مجانية لتعميق فهمك لجافاسكريبت
-            </p>
-          </div>
+          {/* Books Section */}
+          <section className="animate-fade-in" style={{ animationDelay: "0.2s" }}>
+            <div className="max-w-3xl mx-auto text-center mb-12">
+              <h2 className="text-3xl md:text-4xl font-bold mb-4">
+                <span className="bg-gradient-to-r from-primary via-accent to-accent-glow bg-clip-text text-transparent">
+                  كتب ومراجع مجانية
+                </span>
+              </h2>
+              <p className="text-lg text-muted-foreground leading-relaxed">
+                كتب إلكترونية مجانية لتعميق فهمك لجافاسكريبت
+              </p>
+            </div>
 
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-            {books.map((book, index) => (
-              <div
-                key={book.name}
-                className="group relative bg-card rounded-2xl overflow-hidden border border-border/50 hover:border-primary/30 transition-all duration-300 floating-card scroll-reveal"
-                style={{ animationDelay: `${(index + 2) * 0.1}s` }}
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                
-                <div className="relative p-6 space-y-4">
-                  <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
-                    <BookOpen className="h-8 w-8 text-primary" />
+            <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+              {books.map((book, index) => (
+                <div
+                  key={book.name}
+                  className="group relative bg-card rounded-2xl overflow-hidden border border-border/50 hover:border-primary/30 transition-all duration-300 floating-card scroll-reveal"
+                  style={{ animationDelay: `${(index + 2) * 0.1}s` }}
+                >
+                  <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-accent/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+                  
+                  <div className="relative p-6 space-y-4">
+                    <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                      <BookOpen className="h-8 w-8 text-primary" />
+                    </div>
+                    
+                    <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
+                      {book.name}
+                    </h3>
+                    
+                    <p className="text-sm text-muted-foreground leading-relaxed">
+                      {book.description}
+                    </p>
+
+                    <a
+                      href={book.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-primary-glow transition-colors"
+                    >
+                      <span>اقرأ الكتاب</span>
+                      <span>←</span>
+                    </a>
                   </div>
-                  
-                  <h3 className="text-xl font-bold text-foreground group-hover:text-primary transition-colors">
-                    {book.name}
-                  </h3>
-                  
-                  <p className="text-sm text-muted-foreground leading-relaxed">
-                    {book.description}
-                  </p>
 
-                  <a
-                    href={book.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-2 text-sm font-medium text-primary hover:text-primary-glow transition-colors"
-                  >
-                    <span>اقرأ الكتاب</span>
-                    <span>←</span>
-                  </a>
+                  <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
+                    <div className="absolute -inset-[1px] bg-gradient-to-r from-accent/20 via-primary/20 to-accent-glow/20 rounded-2xl blur-lg" />
+                  </div>
                 </div>
-
-                <div className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-                  <div className="absolute -inset-[1px] bg-gradient-to-r from-accent/20 via-primary/20 to-accent-glow/20 rounded-2xl blur-lg" />
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
+              ))}
+            </div>
+          </section>
+        </div>
       </div>
-    </div>
+    </PageTransition>
   );
 };
 
