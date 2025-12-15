@@ -21,35 +21,32 @@ export function ThemeToggle() {
   };
 
   return (
-    <div 
-      className="relative inline-flex items-center bg-card border-2 border-border rounded-full p-1 floating-element cursor-pointer transition-all hover:border-primary/50"
+    <button 
+      className="relative flex items-center gap-2 bg-card/90 backdrop-blur-sm border border-border/50 rounded-full px-2 py-1.5 floating-element cursor-pointer transition-all duration-300 hover:border-primary/50 hover:scale-105"
       onClick={toggleTheme}
-      role="button"
       aria-label="Toggle theme"
     >
-      <div className="relative flex items-center gap-1">
-        <div
-          className={`absolute inset-y-0 w-[calc(50%-2px)] bg-primary rounded-full transition-all duration-300 ease-out ${
-            theme === "light" ? "left-1" : "left-[calc(50%+1px)]"
-          }`}
-        />
-        
-        <button
-          className={`relative z-10 flex items-center justify-center w-9 h-9 rounded-full transition-all duration-300 ${
-            theme === "light" ? "text-primary-foreground" : "text-foreground/60"
-          }`}
-        >
-          <Sun className="h-4 w-4" />
-        </button>
-        
-        <button
-          className={`relative z-10 flex items-center justify-center w-9 h-9 rounded-full transition-all duration-300 ${
-            theme === "dark" ? "text-primary-foreground" : "text-foreground/60"
-          }`}
-        >
-          <Moon className="h-4 w-4" />
-        </button>
+      {/* Day button */}
+      <div
+        className={`flex items-center justify-center w-8 h-8 rounded-full transition-all duration-300 ${
+          theme === "light" 
+            ? "bg-amber-400 text-amber-900 shadow-md shadow-amber-400/50" 
+            : "bg-muted/50 text-muted-foreground hover:bg-muted"
+        }`}
+      >
+        <Sun className="h-4 w-4" />
       </div>
-    </div>
+      
+      {/* Night button */}
+      <div
+        className={`flex items-center justify-center w-8 h-8 rounded-full transition-all duration-300 ${
+          theme === "dark" 
+            ? "bg-indigo-500 text-indigo-100 shadow-md shadow-indigo-500/50" 
+            : "bg-muted/50 text-muted-foreground hover:bg-muted"
+        }`}
+      >
+        <Moon className="h-4 w-4" />
+      </div>
+    </button>
   );
 }
