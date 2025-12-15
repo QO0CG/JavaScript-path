@@ -24,10 +24,8 @@ export function Navbar() {
           {/* Logo - Floating Badge Style */}
           <Link to="/" className="group">
             <div className="flex items-center gap-2 px-3 py-1.5 bg-card rounded-full border border-border floating-element transition-all hover:border-primary/50">
-              <div className="relative">
-                <Code2 className="h-5 w-5 text-primary transition-transform group-hover:scale-110" />
-              </div>
-              <span className="text-sm font-bold bg-gradient-to-r from-primary via-accent to-accent-glow bg-clip-text text-transparent">
+              <Code2 className="h-5 w-5 text-primary transition-transform group-hover:scale-110" />
+              <span className="text-sm font-bold text-foreground">
                 تعلم JavaScript
               </span>
             </div>
