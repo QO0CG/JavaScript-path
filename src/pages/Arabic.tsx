@@ -2,6 +2,7 @@ import { Navbar } from "@/components/Navbar";
 import { ResourceCard } from "@/components/ResourceCard";
 import hsoubImage from "@/assets/hsoub-academy.jpg";
 import harmashImage from "@/assets/harmash.jpg";
+import PageTransition from "@/components/PageTransition";
 
 const Arabic = () => {
   const resources = [
@@ -20,36 +21,38 @@ const Arabic = () => {
   ];
 
   return (
-    <div className="min-h-screen">
-      <Navbar />
-      
-      <div className="container mx-auto px-4 py-12 max-w-7xl">
-        {/* Header */}
-        <div className="max-w-3xl mx-auto text-center mb-16 animate-fade-in">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
-            <span className="bg-gradient-to-r from-primary via-accent to-accent-glow bg-clip-text text-transparent">
-              المصادر العربية
-            </span>
-          </h1>
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            محتوى عربي عالي الجودة من منصات وأكاديميات عربية موثوقة
-          </p>
-        </div>
+    <PageTransition>
+      <div className="min-h-screen">
+        <Navbar />
+        
+        <div className="container mx-auto px-4 py-12 max-w-7xl">
+          {/* Header */}
+          <div className="max-w-3xl mx-auto text-center mb-16 animate-fade-in">
+            <h1 className="text-4xl md:text-5xl font-bold mb-4">
+              <span className="bg-gradient-to-r from-primary via-accent to-accent-glow bg-clip-text text-transparent">
+                المصادر العربية
+              </span>
+            </h1>
+            <p className="text-lg text-muted-foreground leading-relaxed">
+              محتوى عربي عالي الجودة من منصات وأكاديميات عربية موثوقة
+            </p>
+          </div>
 
-        {/* Resources Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-5xl mx-auto">
-          {resources.map((resource, index) => (
-            <div
-              key={resource.name}
-              className="floating-card scroll-reveal"
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              <ResourceCard {...resource} />
-            </div>
-          ))}
+          {/* Resources Grid */}
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-5xl mx-auto">
+            {resources.map((resource, index) => (
+              <div
+                key={resource.name}
+                className="floating-card scroll-reveal"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <ResourceCard {...resource} />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </PageTransition>
   );
 };
 
